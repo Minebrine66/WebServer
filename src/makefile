@@ -1,5 +1,5 @@
 # Compiler
-CC = gcc
+CC = g++ $(CCFLAGS)
 
 # Compiler flags
 CCFLAGS = -Wall -Wextra -g
