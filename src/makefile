@@ -1,16 +1,16 @@
 # Compiler
-CXX = g++
+CC = gcc
 
 # Compiler flags
-CXXFLAGS = -Wall -Wextra -g
+CCFLAGS = -Wall -Wextra -g
 
 all: server
 
 server:	server.o
-	$(CXX) -o server server.o -lm
+	$(CC) -o server server.o -lm
 
-server.o: server.c 
-	$(CXX) $(CXXFLAGS) -c server.cpp
+server.o: server.cpp 
+	$(CC) $(CCFLAGS) -c server.cpp
 
 clean:
 	rm -rf server server.o
