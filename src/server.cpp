@@ -5,10 +5,6 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 
-using std::cout;
-using std::endl;
-
-
 int main(int argc, char* argv[])
 {
     try 
@@ -21,9 +17,9 @@ int main(int argc, char* argv[])
     }
     catch (const std::exception& e)
     {
-        cout << "Exception " << e.what() << endl;
+        std::cout << "Exception " << e.what() << std::endl;
         return -1;
     }
-    cout << "test" << endl;
+    std::cout << "test" << std::endl;
     return 0;
 }
