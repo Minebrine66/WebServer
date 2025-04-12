@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
+#include <locale>
 
 #include <netinet/in.h>
 #include <sys/socket.h>
@@ -12,16 +13,23 @@ using std::cerr;
 
 uint16_t strToInt(char argv[])
 {
-    //char *last;
-    //converts to number in base 10
-    long num = std::stoi(argv, nullptr, 10);
-    //performs check if number is malformed or out of bounds
-    cout << num << endl;
-    if (num < 0 || num > UINT16_MAX)
+    //checks if argument has all numerical chars
+    std::string arg(argv);
+    if (arg.find_first_not_of("0123456789") == std::string::npos)
+    {
+        //converts to number in base 10
+        long num = std::stoi(argv);
+        //performs check if number is malformed or out of bounds
+        if (num < 0 || num > UINT16_MAX)
+        {
+            return 0;
+        }
+        return num;
+    }
+    else
     {
         return 0;
     }
-    return num;
 }
 
 int main(int argc, char* argv[])
@@ -29,14 +37,14 @@ int main(int argc, char* argv[])
     //checks if port number has been specified
     if(argc != 2)
     {
-        cerr << "Invalid arguments!\nusage: ./server <port_num>" << endl;
+        cerr << "ERROR: Invalid arguments!\nusage: ./server <port_num>" << endl;
         return -1;
     }
-    //converts provided argument into int
     uint16_t port = strToInt(argv[1]);
+    //checks if port number is valid
     if (port == 0)
     {
-        cerr << "Invalid port number!" << endl;
+        cerr << "ERROR: Invalid port number!" << endl;
         return -1;
     }
 
