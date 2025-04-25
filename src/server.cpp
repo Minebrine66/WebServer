@@ -11,6 +11,7 @@ using std::cout;
 using std::endl;
 using std::cerr;
 
+// Converts String to Int
 uint16_t strToInt(char argv[])
 {
     //checks if argument has all numerical chars
@@ -32,6 +33,24 @@ uint16_t strToInt(char argv[])
     }
 }
 
+// Creates socket given a port number
+int create_socket(uint16_t port)
+{
+    int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
+
+    sockaddr_in serverIP;
+    serverIP.sin_family = AF_INET;
+    serverIP.sin_port = hton(port);
+    serverIP.sin_Addr.s_addr = INADDR_ANY;
+
+    //bind socket
+    if (bind(serverSocket, (struct sockaddr*)&serverIP, sizeof(serverIP)) < 0)
+    {
+        
+    }
+    
+
+}
 int main(int argc, char* argv[])
 {
     //checks if port number has been specified
