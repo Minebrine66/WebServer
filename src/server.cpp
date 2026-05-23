@@ -65,10 +65,18 @@ int main(int argc, char* argv[])
         return -1;
     }
     uint16_t port = strToInt(argv[1]);
-    // checks if port number is valid
+    // checks if port number is within valid range
     if (port == 0)
     {
-        cerr << "ERROR: Invalid port number!" << endl;
+        cerr << "ERROR: Port number out of range!" << endl;
+        return -1;
+    }
+
+    port = create_socket(port);
+    // check if port can be binded
+    if (port < 0)
+    {
+        cerr << "ERROR: Unable to bind port!" << endl;
         return -1;
     }
 
