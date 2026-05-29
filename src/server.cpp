@@ -35,25 +35,37 @@ uint16_t strToInt(char argv[])
     }
 }
 
-// Creates socket given a port number
+// Returns file descriptor of socket 
 int create_socket(uint16_t port)
 {
-    int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
+    // Create socket
+    int serverSocketFd = socket(AF_INET, SOCK_STREAM, 0);
+    if (serverSocketFd < 0)
+    {
+        // failed to create socket, error out
+        return -1;
+    }
 
     sockaddr_in serverIP;
     serverIP.sin_family = AF_INET;
     serverIP.sin_port = htons(port);
     serverIP.sin_addr.s_addr = INADDR_ANY;
 
-    //bind socket
-    if (bind(serverSocket, (struct sockaddr*)&serverIP, sizeof(serverIP)) < 0)
+    // Bind socket
+    if (bind(serverSocketFd, (struct sockaddr*)&serverIP, sizeof(serverIP)) < 0)
     {
         // failed to bind, error out 
-        return -1;
+        return -2;
+    }
+    // Set socket to listening socket
+    if (listen(serverSocketFd, 500) < 0)
+    {
+        // failed to set socket as listening, error out
+        return -3;
     }
     
-    
-
+    // Socket is good to go, return fd
+    return serverSocketFd;
 }
 
 int main(int argc, char* argv[])
@@ -72,13 +84,22 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    port = create_socket(port);
-    // check if port can be binded
-    if (port < 0)
+    int sockfd = create_socket(port);
+    switch (sockfd)
     {
-        cerr << "ERROR: Unable to bind port!" << endl;
-        return -1;
-    }
+        // check if socket can be created
+        case -1: 
+            cerr << "ERROR: Unable to create socket!" << endl;
+            return -1;
+        // check if socket can be binded
+        case -2: 
+            cerr << "ERROR: Unable to bind socket!" << endl;
+            return -1;
+        // check if socket is set as listening socket
+        case -3:
+            cerr << "ERROR: Unable to set socket as listening!" << endl;
+            return -1;
+    }       
 
 
     cout << "test" << endl;

@@ -100,50 +100,11 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-2" edge="1" parent="1" source="25bsy7xjWY7jCoulGI10-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="N6RsUttFma7vTOrXldnD-1" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-3" connectable="0" parent="N6RsUttFma7vTOrXldnD-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Yes" vertex="1">
-          <mxGeometry relative="1" x="-0.21" y="2" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="25bsy7xjWY7jCoulGI10-13" parent="1" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" value="Can port be binded?" vertex="1">
           <mxGeometry height="140" width="140" x="290" y="650" as="geometry" />
         </mxCell>
         <mxCell id="25bsy7xjWY7jCoulGI10-17" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" value="Error out and terminate" vertex="1">
           <mxGeometry height="80" width="120" x="520" y="680" as="geometry" />
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-5" edge="1" parent="1" source="N6RsUttFma7vTOrXldnD-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="N6RsUttFma7vTOrXldnD-4" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-1" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Bind socket" vertex="1">
-          <mxGeometry height="60" width="120" x="300" y="910" as="geometry" />
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-7" edge="1" parent="1" source="N6RsUttFma7vTOrXldnD-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="N6RsUttFma7vTOrXldnD-6" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-8" connectable="0" parent="N6RsUttFma7vTOrXldnD-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
-          <mxGeometry relative="1" x="-0.0462" y="-2" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-10" edge="1" parent="1" source="N6RsUttFma7vTOrXldnD-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="N6RsUttFma7vTOrXldnD-9" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-11" connectable="0" parent="N6RsUttFma7vTOrXldnD-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Yes" vertex="1">
-          <mxGeometry relative="1" x="-0.1785" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-4" parent="1" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" value="Can socket be set as listening socket?" vertex="1">
-          <mxGeometry height="160" width="180" x="270" y="1020" as="geometry" />
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-6" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" value="Error out and terminate" vertex="1">
-          <mxGeometry height="80" width="120" x="560" y="1060" as="geometry" />
-        </mxCell>
-        <mxCell id="N6RsUttFma7vTOrXldnD-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Return file descriptor for socket" vertex="1">
-          <mxGeometry height="60" width="120" x="300" y="1310" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
